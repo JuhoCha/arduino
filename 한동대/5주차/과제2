@@ -1,0 +1,25 @@
+void setup(){
+  pinMode(13, OUTPUT);
+}
+
+void loop(){
+  write_delay_short(13, 500);
+  write_delay_long(13, 1500, 500);
+}
+
+void write_delay_short(int pin, int del){
+  int i;
+  for(i=0; i<3; i++){
+    digitalWrite(pin, 0);
+    delay(del);
+    digitalWrite(pin, 1);
+    delay(del);
+  }
+}
+
+void write_delay_long(int pin, int del, int d){
+    digitalWrite(pin, 0);
+    delay(d);
+    digitalWrite(pin, 1);
+    delay(del);
+}
