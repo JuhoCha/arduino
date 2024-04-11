@@ -6,11 +6,13 @@ void setup(){
 byte data = 0;
 
 void loop(){
-  int data_left;
-  byte msg;
+  get_msg();
 }
 
 void get_msg(){
+    int data_left;
+    byte msg;
+
   data_left = Serial.available();
   if(data_left > 0){
     msg = Serial.read();
@@ -60,11 +62,11 @@ void get_msg(){
       }
     }
 
-    else if(msg > 5 || msg <2){
+    else if((msg > 5 || msg <2) && msg != 10){
       Serial.print(msg);
-      Serial.print(": out of range");
+      Serial.println(": out of range");
+      get_msg();
     }
   }
 }
   
-
