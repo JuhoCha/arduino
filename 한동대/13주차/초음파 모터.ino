@@ -20,7 +20,6 @@ void loop() {
 	
   if(distance<=10){
     analogWrite(motorPin, 255);
-    
   }
   else{
    analogWrite(motorPin, 0);
