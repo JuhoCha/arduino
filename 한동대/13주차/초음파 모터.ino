@@ -18,7 +18,7 @@ void loop() {
 	duration = pulseIn(echoPin, HIGH); 
 	distance = duration*34000/1000000/2;/*아두이노 초음파 센서 속도? 340m/s  거리를 구하려면 속력*시간이니까 */
 	
-  if(distance<10){
+  if(distance<=10){
     analogWrite(motorPin, 255);
     
   }
